@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 
 :root{
     --primary: #d62926;
@@ -8,21 +8,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'line_seed_sans_th';
 }
 
 body{
     background-color: #efefef;
 }
-
-.container{
+.left-container, .right-container {
+    width: 50%;
+    float: left;
+}
+.container {
     min-height: 100vh;
     display: flex;
     justify-content: left;
     align-items: left;
     overflow: hidden;
-    width: 50%;
-    float: left;
+    width: 100%;
 }
 
 .card{
