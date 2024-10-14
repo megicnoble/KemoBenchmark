@@ -1,4 +1,4 @@
-// ขอบคุณ ChatGPT มากที่ทำให้ผมไม่ต้องเขียนแบบเน้นทึก <3
+// ขอบคุณ ChatGPT มากที่ทำให้ผมไม่ต้องเขียนแบบเน้นถึก <3
 function setupContainer(container) {
     const colors = container.querySelectorAll('.color');
     const GPUthingy = container.querySelectorAll('.GPUsmt');

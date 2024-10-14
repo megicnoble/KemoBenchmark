@@ -356,6 +356,15 @@ body{
         left: 5%;
     }
 }
+
+@media (max-width: 750px){
+    .left-container, .right-container {
+        width: 100%;
+    }
+    .container {
+        min-height: auto;
+    }
+}
 @media (max-width: 490px){
     .bigtext{
         font-size: 7rem;
