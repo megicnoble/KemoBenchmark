@@ -292,10 +292,10 @@
 #picamd {
   object-fit: cover;
   height: 50vh;
+  width: 100vw;
   pointer-events: none;
   top: 0;
   left: 0;
-
 }
 
 #abtusinfo {

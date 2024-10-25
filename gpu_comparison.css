@@ -91,7 +91,7 @@ body {
     width: 85%;
     border: solid #1d1d1f 1.7px;
     border-radius: 1px;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
 }
 
 .list_row {
@@ -111,12 +111,13 @@ body {
     border: none;
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     height: 100%;
-    max-height: 3.5rem;
-    width: 90%;
-    max-width: 24rem;
+    max-height: 4rem;
+    width: 100%;
+    max-width: 21rem;
     border-radius: 0.625rem;
     cursor: pointer;
 }
@@ -126,10 +127,11 @@ body {
 }
 
 .list_content img {
-    max-width: 2rem;
+    width: 100%;
+    max-width: 5.5rem;
     border-radius: 2px;
-    margin-left: 2rem;
-    margin-right: 1rem;
+    margin-left: 4rem;
+    margin-right: 1.2rem;
 }
 
 .select_container {
