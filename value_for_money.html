@@ -4,114 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="abtusstyle.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <link rel="stylesheet" href="https://bit.ly/3CZa0Sz" type="text/css" charset="utf-8" />
     <title>Value For Money</title>
+
 </head>
 <body>
-    <div class="left-container">
-        <div class="container">
-            <div class="card">
-                <div class="GPUcon">
-                    <div class="gradients">
-                        <div class="gradient second" color="RX 7900 GRE"></div>
-                        <div class="gradient" color="RX 7600"></div>
-                        <div class="gradient" color="RTX 4090"></div>
-                        <div class="gradient" color="RTX 4080 Super"></div>
-                        <div class="gradient" color="RTX 4080"></div>
-                    </div>
-                    <h1 class="bigtext" id="AMD-Nvidia-header">AMD</h1>
-                    <img src="https://static.gigabyte.com/StaticFile/Image/Global/84b9ea5ec448ee4c35e3a8afc4b3eb56/Product/39753/webp/1000" alt="" class="GPUsmt show" color="RX 7900 GRE">
-                    <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207600%20Phantom%20Gaming%208GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7600">
-                    <img src="https://storage.googleapis.com/file-computeandmore/images/561c30ec-273b-463f-af5d-140898e94d36.png" alt="" class="GPUsmt" color="RTX 4090">
-                    <img src="https://asset.msi.com/resize/image/global/product/product_1704703437cd0bb1ce5104acf13cdad77245989172.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080 Super">
-                    <img src="https://asset.msi.com/resize/image/global/product/product_1668062791d5e83a0a428d9b516392bbf97b12a90e.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080">
-
+    <Header>
+        <nav class="navbar">
+            <div class="logo">
+                <script src="kemo.js"></script>
+                <div id="lottie"></div>
+                <script src="kemolottie.js"></script>  
+            </div>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="cpu_comparison.html">Compare</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
+                </ul>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </nav>
+        <div class="phonenav" id="phonenav">
+            <ul>
+                <div class="phonenavli" id="phonenavli">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="cpu_comparison.html">Compare</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
                 </div>
-                <div class="info">
-                    <div class="GPUdesc">
-                        <div>
-                            <h1 class="big" id="pro-name">RX 7900 GRE</h1>
-                            <span class="new">ตัวล่าสุด</span>
+            </ul>
+        </div>    
+    </Header>
+
+    <div class="test">
+        <div class="left-container">
+            <div class="container">
+                <div class="card">
+                    <div class="GPUcon">
+                        <div class="gradients">
+                            <div class="gradient second" color="RX 7900 GRE"></div>
+                            <div class="gradient" color="RX 7800 XT"></div>
+                            <div class="gradient" color="RX 7700 XT"></div>
+                            <div class="gradient" color="RX 7600 XT"></div>
+                            <div class="gradient" color="RX 7600"></div>
+                            <div class="gradient" color="RX 6600 XT"></div>
+                            <div class="gradient" color="RTX 4090"></div>
+                            <div class="gradient" color="RTX 4080 Super"></div>
+                            <div class="gradient" color="RTX 4080"></div>
+                            <div class="gradient" color="RTX 4070 S"></div>
+                            <div class="gradient" color="RTX 4070"></div>
+                            <div class="gradient" color="RTX 4060"></div>
+                            <div class="gradient" color="RTX 3070"></div>
+                            <div class="gradient" color="RTX 3060"></div>
+                            <div class="gradient" color="GTX 1660 SUPER"></div>
                         </div>
-                        <h3 class="small" id="full-name">Radeon™ RX 7900 GRE</h3>
+                        <h1 class="bigtext" id="AMD-Nvidia-header">AMD</h1>
+                        <img src="https://static.gigabyte.com/StaticFile/Image/Global/84b9ea5ec448ee4c35e3a8afc4b3eb56/Product/39753/webp/1000" alt="" class="GPUsmt show" color="RX 7900 GRE">
+                        <img src="https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%207800%20XT%20Phantom%20Gaming%2016GB%20OC(M1).png" alt="" class="GPUsmt" color="RX 7800 XT">
+                        <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207700%20XT%20Phantom%20Gaming%2012GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7700 XT">
+                        <img src="https://static.gigabyte.com/StaticFile/Image/Global/c1680e5713b56a01ce6b18302519043d/Product/39016/png/300" alt="" class="GPUsmt" color="RX 7600 XT">
+                        <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207600%20Phantom%20Gaming%208GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7600">
+                        <img src="https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%206600%20XT%20Phantom%20Gaming%20D%208GB%20OC(M1).png" alt="" class="GPUsmt" color="RX 6600 XT">
+                        <img src="https://storage.googleapis.com/file-computeandmore/images/561c30ec-273b-463f-af5d-140898e94d36.png" alt="" class="GPUsmt" color="RTX 4090">
+                        <img src="https://asset.msi.com/resize/image/global/product/product_1704703437cd0bb1ce5104acf13cdad77245989172.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080 Super">
+                        <img src="https://asset.msi.com/resize/image/global/product/product_1668062791d5e83a0a428d9b516392bbf97b12a90e.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080">
+                        <img src="https://storage.googleapis.com/file-computeandmore/images/410cd1d8-8987-4aea-a776-fd0ac57ee01d.png" alt="" class="GPUsmt" color="RTX 4070 S">
+                        <img src="https://iristechworld.com/wp-content/uploads/2023/09/ASUS-GeForce-RTX-4070-BTF-Connector-Less-Graphics-Card-1920x1920-1-800x800.png" alt="" class="GPUsmt" color="RTX 4070">
+                        <img src="https://cdn.ut.in.th/media/catalog/product/cache/5e6411639b53504723017d869741d016/4/0/4060_ex_white.png" alt="" class="GPUsmt" color="RTX 4060">
+                        <img src="https://www.nextstepreborn.co.th/wp-content/uploads/2022/02/cover-ASUS-KO-GEFORCE-RTX-3070-OC-EDITION-8GB-GDDR6-V2-resize.png" alt="" class="GPUsmt" color="RTX 3070">
+                        <img src="https://shwetacomputers.com/cdn/shop/files/1_72787869-7aa5-4c0d-96cc-e54108701747.png?v=1717584002" alt="" class="GPUsmt" color="RTX 3060">
+                        <img style="margin-bottom: 10%; width: 80%;" src="https://image.citycenter.jo/cache/catalog/092022/1660sss-650x400.png" alt="" class="GPUsmt" color="GTX 1660 SUPER">
                     </div>
-                    <div class="description">
-                        <h3 class="title">ข้อมูลโดยย่อ</h3>
-                        <p class="text" id="pro-info">• 16GB GDDR6<br>• 2245 MHz Boost Clock<br>• 600 W Min PSU<br></p>
-                    </div>
-                    <div class="color-container">
-                        <h3 class="title">เลือกการ์ดจอ</h3>
-                        <div class="color-container-another">
-                            <select id="colorDropdown">
-                                <option value="#f84848" color="RX 7900 GRE">RX 7900 GRE</option>
-                                <option value="#f84848" color="RX 7600">RX 7600</option>
-                                <option value="#29b864" color="RTX 4090">RTX 4090</option>
-                                <option value="#29b864" color="RTX 4080 Super">RTX 4080 Super</option>
-                                <option value="#29b864" color="RTX 4080">RTX 4080</option>
-                            </select>
+                    <div class="info">
+                        <div class="GPUdesc">
+                            <div>
+                                <h1 class="big" id="pro-name">RX 7900 GRE</h1>
+                                <span class="new">ค่าเริ่มต้น</span>
+                            </div>
+                            <h3 class="small" id="full-name">Radeon™ RX 7900 GRE</h3>
                         </div>
-                    </div>
-                    <div class="input-price">
-                        <a href="#" class="custom-price">PyScript goes here</a>
+                        <div class="description">
+                            <h3 class="title">ข้อมูลโดยย่อ</h3>
+                            <p class="text" id="pro-info">• 16GB GDDR6<br>• 2245 MHz Boost Clock<br>• 600 W Min PSU<br></p>
+                        </div>
+                        <div class="color-container">
+                            <h3 class="title">เลือกการ์ดจอ</h3>
+                            <div class="color-container-another">
+                                <select id="colorDropdownLeft">
+                                    <option value="RX 7900 GRE" color="RX 7900 GRE">RX 7900 GRE</option>
+                                    <option value="RX 7800 XT" color="RX 7800 XT">RX 7800 XT</option>
+                                    <option value="RX 7700 XT" color="RX 7700 XT">RX 7700 XT</option>
+                                    <option value="RX 7600 XT" color="RX 7600 XT">RX 7600 XT</option>
+                                    <option value="RX 7600" color="RX 7600">RX 7600</option>
+                                    <option value="RX 6600 XT" color="RX 6600 XT">RX 6600 XT</option>
+                                    <option value="RTX 4090" color="RTX 4090">RTX 4090</option>
+                                    <option value="RTX 4080 Super" color="RTX 4080 Super">RTX 4080 Super</option>
+                                    <option value="RTX 4080" color="RTX 4080">RTX 4080</option>
+                                    <option value="RTX 4070 S" color="RTX 4070 S">RTX 4070 Super</option>
+                                    <option value="RTX 4070" color="RTX 4070">RTX 4070</option>
+                                    <option value="RTX 4060" color="RTX 4060">RTX 4060</option>
+                                    <option value="RTX 3070" color="RTX 3070">RTX 3070</option>
+                                    <option value="RTX 3060" color="RTX 3060">RTX 3060</option>
+                                    <option value="GTX 1660 SUPER" color="GTX 1660 SUPER">GTX 1660 SUPER</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-price">
+                            <input type="number" class="custom-price" id="priceInputLeft" placeholder="your price" min="0">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="right-container">
-        <div class="container">
-            <div class="card">
-                <div class="GPUcon">
-                    <div class="gradients">
-                        <div class="gradient second" color="RX 7900 GRE"></div>
-                        <div class="gradient" color="RX 7600"></div>
-                        <div class="gradient" color="RTX 4090"></div>
-                        <div class="gradient" color="RTX 4080 Super"></div>
-                        <div class="gradient" color="RTX 4080"></div>
-                    </div>
-                    <h1 class="bigtext" id="AMD-Nvidia-header">AMD</h1>
-                    <img src="https://static.gigabyte.com/StaticFile/Image/Global/84b9ea5ec448ee4c35e3a8afc4b3eb56/Product/39753/webp/1000" alt="" class="GPUsmt show" color="RX 7900 GRE">
-                    <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207600%20Phantom%20Gaming%208GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7600">
-                    <img src="https://storage.googleapis.com/file-computeandmore/images/561c30ec-273b-463f-af5d-140898e94d36.png" alt="" class="GPUsmt" color="RTX 4090">
-                    <img src="https://asset.msi.com/resize/image/global/product/product_1704703437cd0bb1ce5104acf13cdad77245989172.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080 Super">
-                    <img src="https://asset.msi.com/resize/image/global/product/product_1668062791d5e83a0a428d9b516392bbf97b12a90e.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080">
-
-                </div>
-                <div class="info">
-                    <div class="GPUdesc">
-                        <div>
-                            <h1 class="big" id="pro-name">RX 7900 GRE</h1>
-                            <span class="new">ตัวล่าสุด</span>
+        <div class="right-container">
+            <div class="container">
+                <div class="card">
+                    <div class="GPUcon">
+                        <div class="gradients">
+                            <div class="gradient second" color="RX 7900 GRE"></div>
+                            <div class="gradient" color="RX 7800 XT"></div>
+                            <div class="gradient" color="RX 7700 XT"></div>
+                            <div class="gradient" color="RX 7600 XT"></div>
+                            <div class="gradient" color="RX 7600"></div>
+                            <div class="gradient" color="RX 6600 XT"></div>
+                            <div class="gradient" color="RTX 4090"></div>
+                            <div class="gradient" color="RTX 4080 Super"></div>
+                            <div class="gradient" color="RTX 4080"></div>
+                            <div class="gradient" color="RTX 4070 S"></div>
+                            <div class="gradient" color="RTX 4070"></div>
+                            <div class="gradient" color="RTX 4060"></div>
+                            <div class="gradient" color="RTX 3070"></div>
+                            <div class="gradient" color="RTX 3060"></div>
+                            <div class="gradient" color="GTX 1660 SUPER"></div>
                         </div>
-                        <h3 class="small" id="full-name">Radeon™ RX 7900 GRE</h3>
+                        <h1 class="bigtext" id="AMD-Nvidia-header">AMD</h1>
+                        <img src="https://static.gigabyte.com/StaticFile/Image/Global/84b9ea5ec448ee4c35e3a8afc4b3eb56/Product/39753/webp/1000" alt="" class="GPUsmt show" color="RX 7900 GRE">
+                        <img src="https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%207800%20XT%20Phantom%20Gaming%2016GB%20OC(M1).png" alt="" class="GPUsmt" color="RX 7800 XT">
+                        <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207700%20XT%20Phantom%20Gaming%2012GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7700 XT">
+                        <img src="https://static.gigabyte.com/StaticFile/Image/Global/c1680e5713b56a01ce6b18302519043d/Product/39016/png/300" alt="" class="GPUsmt" color="RX 7600 XT">
+                        <img src="https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207600%20Phantom%20Gaming%208GB%20OC(L1).png" alt="" class="GPUsmt" color="RX 7600">
+                        <img src="https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%206600%20XT%20Phantom%20Gaming%20D%208GB%20OC(M1).png" alt="" class="GPUsmt" color="RX 6600 XT">
+                        <img src="https://storage.googleapis.com/file-computeandmore/images/561c30ec-273b-463f-af5d-140898e94d36.png" alt="" class="GPUsmt" color="RTX 4090">
+                        <img src="https://asset.msi.com/resize/image/global/product/product_1704703437cd0bb1ce5104acf13cdad77245989172.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080 Super">
+                        <img src="https://asset.msi.com/resize/image/global/product/product_1668062791d5e83a0a428d9b516392bbf97b12a90e.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png" alt="" class="GPUsmt" color="RTX 4080">
+                        <img src="https://storage.googleapis.com/file-computeandmore/images/410cd1d8-8987-4aea-a776-fd0ac57ee01d.png" alt="" class="GPUsmt" color="RTX 4070 S">
+                        <img src="https://iristechworld.com/wp-content/uploads/2023/09/ASUS-GeForce-RTX-4070-BTF-Connector-Less-Graphics-Card-1920x1920-1-800x800.png" alt="" class="GPUsmt" color="RTX 4070">
+                        <img src="https://cdn.ut.in.th/media/catalog/product/cache/5e6411639b53504723017d869741d016/4/0/4060_ex_white.png" alt="" class="GPUsmt" color="RTX 4060">
+                        <img src="https://www.nextstepreborn.co.th/wp-content/uploads/2022/02/cover-ASUS-KO-GEFORCE-RTX-3070-OC-EDITION-8GB-GDDR6-V2-resize.png" alt="" class="GPUsmt" color="RTX 3070">
+                        <img src="https://shwetacomputers.com/cdn/shop/files/1_72787869-7aa5-4c0d-96cc-e54108701747.png?v=1717584002" alt="" class="GPUsmt" color="RTX 3060">
+                        <img style="margin-bottom: 10%; width: 80%;" src="https://image.citycenter.jo/cache/catalog/092022/1660sss-650x400.png" alt="" class="GPUsmt" color="GTX 1660 SUPER">
                     </div>
-                    <div class="description">
-                        <h3 class="title">ข้อมูลโดยย่อ</h3>
-                        <p class="text" id="pro-info">• 16GB GDDR6<br>• 2245 MHz Boost Clock<br>• 600 W Min PSU<br></p>
-                    </div>
-                    <div class="color-container">
-                        <h3 class="title">เลือกการ์ดจอ</h3>
-                        <div class="color-container-another">
-                            <select id="colorDropdown">
-                                <option value="#f84848" color="RX 7900 GRE">RX 7900 GRE</option>
-                                <option value="#f84848" color="RX 7600">RX 7600</option>
-                                <option value="#29b864" color="RTX 4090">RTX 4090</option>
-                                <option value="#29b864" color="RTX 4080 Super">RTX 4080 Super</option>
-                                <option value="#29b864" color="RTX 4080">RTX 4080</option>
-                            </select>
+                    <div class="info">
+                        <div class="GPUdesc">
+                            <div>
+                                <h1 class="big" id="pro-name">RX 7900 GRE</h1>
+                                <span class="new">ค่าเริ่มต้น</span>
+                            </div>
+                            <h3 class="small" id="full-name">Radeon™ RX 7900 GRE</h3>
                         </div>
-                    </div>
-                    <div class="input-price">
-                        <a href="#" class="custom-price">PyScript goes here</a>
+                        <div class="description">
+                            <h3 class="title">ข้อมูลโดยย่อ</h3>
+                            <p class="text" id="pro-info">• 16GB GDDR6<br>• 2245 MHz Boost Clock<br>• 600 W Min PSU<br></p>
+                        </div>
+                        <div class="color-container">
+                            <h3 class="title">เลือกการ์ดจอ</h3>
+                            <div class="color-container-another">
+                                <select id="colorDropdownRight">
+                                    <option value="RX 7900 GRE" color="RX 7900 GRE">RX 7900 GRE</option>
+                                    <option value="RX 7800 XT" color="RX 7800 XT">RX 7800 XT</option>
+                                    <option value="RX 7700 XT" color="RX 7700 XT">RX 7700 XT</option>
+                                    <option value="RX 7600 XT" color="RX 7600 XT">RX 7600 XT</option>
+                                    <option value="RX 7600" color="RX 7600">RX 7600</option>
+                                    <option value="RX 6600 XT" color="RX 6600 XT">RX 6600 XT</option>
+                                    <option value="RTX 4090" color="RTX 4090">RTX 4090</option>
+                                    <option value="RTX 4080 Super" color="RTX 4080 Super">RTX 4080 Super</option>
+                                    <option value="RTX 4080" color="RTX 4080">RTX 4080</option>
+                                    <option value="RTX 4070 S" color="RTX 4070 S">RTX 4070 Super</option>
+                                    <option value="RTX 4070" color="RTX 4070">RTX 4070</option>
+                                    <option value="RTX 4060" color="RTX 4060">RTX 4060</option>
+                                    <option value="RTX 3070" color="RTX 3070">RTX 3070</option>
+                                    <option value="RTX 3060" color="RTX 3060">RTX 3060</option>
+                                    <option value="GTX 1660 SUPER" color="GTX 1660 SUPER">GTX 1660 SUPER</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-price">
+                            <input type="number" class="custom-price" id="priceInputRight" placeholder="your price" min="0">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="bar">
+                <h1 id="name-dis" class="worth-more">ทำไมยังไม่เลือกการ์ดจออีก</h1>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+                <h3 id="name-disPercent" class="worth-morePercent">เลือกเสร็จก็ใส่ราคาด้วย</h3>
+            </div>
+            <div class="calculate">
+                <button py-click="main()" class="calc-button">Calculate</button>
+            </div>
         </div>
     </div>
+    <py-script>
+        from js import document, updateProgress, window
+        class GPU:
+            benchmark_score = {
+                "RX 7900 GRE": 22323, "RX 7800 XT": 20026, "RX 7700 XT": 16999,
+                "RX 7600 XT": 11291, "RX 7600": 11002, "RX 6600 XT": 9579,
+                "RTX 4090": 36517, "RTX 4080 Super": 28381, "RTX 4080": 28273,
+                "RTX 4070 Ti S": 24266, "RTX 4070 S": 20981, "RTX 4070": 17857,
+                "RTX 4060 Ti 8GB": 13507, "RTX 4060": 10620, "RTX 3070": 13665,
+                "RTX 3060": 8776, "RTX 3050": 6260, "GTX 1660 SUPER": 5985
+            }
+
+            game_fps = {
+                "RX 7900 GRE": 135.8, "RX 7800 XT": 129.3, "RX 7700 XT": 116.1,
+                "RX 7600 XT": 91.9, "RX 7600": 82.0, "RX 6600 XT": 74.7,
+                "RTX 4090": 154.1, "RTX 4080 Super": 148.3, "RTX 4080": 147.0,
+                "RTX 4070 Ti S": 142.3, "RTX 4070 S": 134.2, "RTX 4070": 122.0,
+                "RTX 4060 Ti 8GB": 100.4, "RTX 4060": 84.9, "RTX 3070": 98.8,
+                "RTX 3060": 72.3, "RTX 3050": 51.9, "GTX 1660 SUPER": 46.8
+            }
+
+            tgp = {
+                "RX 7900 GRE": 260, "RX 7800 XT": 263, "RX 7700 XT": 245,
+                "RX 7600 XT": 190, "RX 7600": 165, "RX 6600 XT": 160,
+                "RTX 4090": 450, "RTX 4080 Super": 320, "RTX 4080": 320,
+                "RTX 4070 Ti S": 285, "RTX 4070 S": 220, "RTX 4070": 200,
+                "RTX 4060 Ti 8GB": 160, "RTX 4060": 115, "RTX 3070": 220,
+                "RTX 3060": 170, "RTX 3050": 130, "GTX 1660 SUPER": 125
+            }
+
+            def __init__(self, name, price):
+                self.name = name
+                self.price = price
+                self.__score = self.benchmark_score[name]
+                self.__fps = self.game_fps[name]
+                self.__power = self.tgp[name]
+
+            def money_spent_for_performance(self):
+                return self.price / self.__score
+
+            def money_spent_for_fps(self):
+                return self.price / self.__fps
+
+            def watt_per_performance(self):
+                return self.__power / self.__score
+
+            def watt_per_fps(self):
+                return self.__power / self.__fps
+
+            def performance_per_money(self):
+                return self.__score / self.price
+
+            def fps_per_money(self):
+                return self.__fps / self.price
+
+            def performance_per_watt(self):
+                return self.__score / self.__power
+
+            def fps_per_watt(self):
+                return self.__fps / self.__power
+
+            def more_performance_value(self):
+                return self.money_spent_for_performance() / self.watt_per_performance()
+
+            def more_fps_value(self):
+                return self.money_spent_for_fps() / self.watt_per_fps()
+
+            def compare_performance_value(self, other_gpu):
+                if self.more_performance_value() < other_gpu.more_performance_value():
+                    return self.name
+                else:
+                    return other_gpu.name
+        def main():
+            gpu1_name = Element("colorDropdownLeft").value
+            gpu2_name = Element("colorDropdownRight").value
+            price1_input = Element("priceInputLeft").value
+            price2_input = Element("priceInputRight").value
+
+            if not (gpu1_name and gpu2_name and price1_input and price2_input):
+                return
+
+            price1 = float(price1_input)
+            price2 = float(price2_input)
+
+            gpu1 = GPU(gpu1_name, price1)
+            gpu2 = GPU(gpu2_name, price2)
+
+            result1 = gpu1.more_performance_value()
+            result2 = gpu2.more_performance_value()
+
+            more_value = max(result1, result2)
+            less_value = min(result1, result2)
+
+            percent_diff = ((more_value / less_value) * 100) - 100
+
+            if percent_diff > 100:
+                percent_diff = 100
+
+            percent_diff = round(percent_diff, 2)
+            window.js_percent_diff = percent_diff
+            lower_value_gpu = gpu1.compare_performance_value(gpu2)
+            Element("name-dis").element.textContent = f"{lower_value_gpu} อาจจะคุ้มกว่า"
+            Element("name-disPercent").element.textContent = f"เปรียบเทียบจาก การใช้ไฟ, คะแนน benchmark, FPS ในเกมส์ ประมาณ {percent_diff}%"
+            updateProgress()
+    </py-script>
     <script src="app.js"></script>
 </body>
 </html>

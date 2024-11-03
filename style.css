@@ -10,16 +10,31 @@
     box-sizing: border-box;
     font-family: 'line_seed_sans_th';
 }
-
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;}
 body{
     background-color: #efefef;
 }
-.left-container, .right-container {
+.test {
+    position: relative;
+}
+.left-container {
     width: 50%;
     float: left;
+    position: relative;
+    z-index: 5000;
+
+}
+.right-container {
+    width: 50%;
+    float: right;
+    position: relative;
+    z-index: 5000;
 }
 .container {
-    min-height: 100vh;
     display: flex;
     justify-content: left;
     align-items: left;
@@ -41,15 +56,7 @@ body{
     box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
     0 -15px 35px rgba(0, 0, 0, 0.1),
     0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: .5s;
-}
-
-.gradients{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+    transition: .3s;
 }
 
 .gradient{
@@ -83,7 +90,23 @@ body{
     background-image: linear-gradient(45deg, #d62926, #ee625f);
 }
 
+.gradient[color="RX 7800 XT"]{
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="RX 7700 XT"]{
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="RX 7600 XT"]{
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
 .gradient[color="RX 7600"]{
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="RX 6600 XT"]{
     background-image: linear-gradient(45deg, #d62926, #ee625f);
 }
 
@@ -97,6 +120,94 @@ body{
 
 .gradient[color="RTX 4080"]{
     background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="RTX 4070 S"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="RTX 4070"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="RTX 4060"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="RTX 3070"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="RTX 3060"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+.gradient[color="GTX 1660 SUPER"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+
+
+.color[color="RX 7900 GRE"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RX 7800 XT"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RX 7700 XT"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RX 7600 XT"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RX 7600"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RX 6600 XT"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="RTX 4090"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+
+.color[color="RTX 4080 Super"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+
+.color[color="RTX 4080"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="RTX 4070 S"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="RTX 4070"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="RTX 4060"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="RTX 3070"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="RTX 3060"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+.color[color="GTX 1660 SUPER"]{
+    background-color: #29b864;
+    border-color: #29b864;
 }
 
 .bigtext{
@@ -117,7 +228,7 @@ body{
     bottom: 0;
     left: 0;
     margin-left: 15%;
-    transition: .5s;
+    transition: .3s;
 }
 
 .GPUsmt.show{
@@ -156,7 +267,7 @@ body{
     color: #fff;
     padding: 3px 10px;
     border-radius: 5px;
-    transition: .5s;
+    transition: .3s;
 }
 
 .GPUdesc .small{
@@ -178,7 +289,7 @@ body{
     margin-top: 7.5px;
 }
 
-#colorDropdown {
+#colorDropdownLeft {
     appearance: none;
     background-color: #fff;
     border: 2px solid #ddd;
@@ -191,28 +302,74 @@ body{
     width: 250px;
     outline: none;
     position: relative;
+    height: 55px;
 }
 
-#colorDropdown:focus {
+#colorDropdownLeft:focus {
     border-color: rgba(0, 0, 0, 0.1);
 }
 
-#colorDropdown:hover {
+#colorDropdownLeft:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-#colorDropdown option {
+#colorDropdownLeft option {
     background-color: white;
     color: #333;
     padding: 10px;
 }
 
-#colorDropdown option[value="#f84848"] {
+#colorDropdownLeft {
     background-color: white;
     color: #333;
 }
 
-#colorDropdown option[value="#29b864"] {
+#colorDropdownLeft {
+    background-color: white;
+    color: #333;
+}
+
+
+
+
+
+
+#colorDropdownRight {
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 250px;
+    outline: none;
+    position: relative;
+    height: 55px;
+}
+
+#colorDropdownRight:focus {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+#colorDropdownRight:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#colorDropdownRight option {
+    background-color: white;
+    color: #333;
+    padding: 10px;
+}
+
+#colorDropdownRight option[value="#f84848"] {
+    background-color: white;
+    color: #333;
+}
+
+#colorDropdownRight option[value="#29b864"] {
     background-color: white;
     color: #333;
 }
@@ -264,33 +421,10 @@ body{
     margin: 0 10px;
     border: 5px solid;
     cursor: pointer;
-    transition: .5s;
+    transition: .3s;
 }
 
-.color[color="RX 7900 GRE"]{
-    background-color: #f84848;
-    border-color: #f84848;
-}
 
-.color[color="RX 7600"]{
-    background-color: #f84848;
-    border-color: #f84848;
-}
-
-.color[color="RTX 4090"]{
-    background-color: #29b864;
-    border-color: #29b864;
-}
-
-.color[color="RTX 4080 Super"]{
-    background-color: #29b864;
-    border-color: #29b864;
-}
-
-.color[color="RTX 4080"]{
-    background-color: #29b864;
-    border-color: #29b864;
-}
 
 .color.active{
     border-color: #fff;
@@ -308,14 +442,15 @@ body{
 
 .custom-price{
     padding: .7rem 1rem;
-    background-color: var(--primary);
+    background-color: #ebebeb;
     text-decoration: none;
-    color: #fff;
+    color: #333333;
+    min-width: 30;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    font-size: 1.1rem;
-    transition: .5s;
+    font-size: .9rem;
+    transition: .3s;
 }
 
 .custom-price:hover{
@@ -324,6 +459,46 @@ body{
 
 .custom-price i{
     margin-right: 2px;
+}
+
+@media (max-width: 100000px){
+    .GPUsmt{
+        width: 15%;
+    }
+}
+
+@media (max-width: 5000px){
+    .GPUsmt{
+        width: 20%;
+    }
+}
+
+@media (max-width: 4000px){
+    .GPUsmt{
+        width: 30%;
+    }
+}
+
+@media (max-width: 3000px){
+    .GPUsmt{
+        width: 40%;
+    }
+}
+@media (max-width: 2200px){
+    .GPUsmt{
+        width: 45%;
+    }
+}
+@media (max-width: 1800px){
+    .GPUsmt{
+        width: 55%;
+    }
+}
+
+@media (max-width: 1700px){
+    .GPUsmt{
+        width: 60%;
+    }
 }
 
 @media (max-width: 1070px){
@@ -357,7 +532,7 @@ body{
     }
 }
 
-@media (max-width: 750px){
+@media (max-width: 900px){
     .left-container, .right-container {
         width: 100%;
     }
@@ -413,3 +588,87 @@ body{
     }
 
 }
+
+.bar {
+    text-align: center;
+    margin-bottom: 125px;
+    transform: translateY(80px);
+}
+input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 70%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#progress {
+    height: 100%;
+    background: linear-gradient(270deg, #ff7f50, #87ceeb, #6a5acd);
+    background-size: 600% 600%;
+    width: 0;
+    animation: gradientAnimation 10s ease infinite;
+    transition: width .6s ease;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.worth-more {
+    margin-bottom: 15px;
+}
+
+.worth-morePercent {
+    font-weight: 100;
+    color: #444;
+}
+
+.calculate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.calc-button {
+    background-color: white;
+    color: black;
+    border: solid 3px #303030;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.calc-button:hover {
+    background-color: #999999;
+    transform: scale(1.1);
+}
+
+.calc-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
