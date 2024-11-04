@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GPU Comparison</title>
+    <link rel="icon" type="image/x-icon" href="" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="abtusstyle.css">
+    <link rel="stylesheet" type="text/css" href="gpu_comparison_2.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+    <Header>
+        <nav class="navbar">
+            <div class="logo">
+                <script src="kemo.js"></script>
+                <div id="lottie"></div>
+                <script src="kemolottie.js"></script>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cpu_comparison.html" class="active">Compare</a></li>
+                <li><a href="value_for_money.html">VoF</a></li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </nav>
+        <div class="phonenav" id="phonenav">
+            <ul>
+                <div class="phonenavli" id="phonenavli">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cpu_comparison.html">Compare</a></li>
+                    <li><a href="value_for_money.html">VoF</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
+                </div>
+            </ul>
+        </div>
+    </Header>
+    <div class="cpu_comparison_2">
+        <div class="main_content">
+            <div class="head_container">
+                <div class="product_container">
+                    <div class="detail_image">
+                        <img id="product1-image" src="" />
+                    </div>
+                    <div class="product" id="cpu1-product">
+                        <button class="dropdown-button" id="cpu1-dropdown-button" onclick="toggleDropdown('cpu1')">
+                            SELECT CPU
+                        </button>
+                        <input type="text" class="search-box" id="cpu1-search-box" style="display: none"
+                            placeholder="Search ..." oninput="filterCpuOptions(event, 'cpu1')" autocomplete="off" />
+                        <ul class="dropdown-content" id="cpu1-dropdown-content">
+                            <li class="dropdown-item" data-value="RX 6600 XT"
+                            onclick="selectCPU('cpu1', 'RX 6600 XT')">
+                            RX 6600 XT
+                        </li>
+                        <li class="dropdown-item" data-value="RTX 3060 12GB"
+                            onclick="selectCPU('cpu1', 'RTX 3060 12GB')">
+                            RTX 3060 12GB
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="detail_image">
+                        <img id="product2-image" src="" />
+                    </div>
+                    <div class="product" id="cpu2-product">
+                        <button class="dropdown-button" id="cpu2-dropdown-button" onclick="toggleDropdown('cpu2')">
+                            SELECT CPU
+                        </button>
+                        <input type="text" class="search-box" id="cpu2-search-box" style="display: none"
+                            placeholder="Search ..." oninput="filterCpuOptions(event, 'cpu2')" autocomplete="off" />
+                        <ul class="dropdown-content" id="cpu2-dropdown-content">
+                            <li class="dropdown-item" data-value="RX 6600 XT"
+                                    onclick="selectCPU('cpu2', 'RX 6600 XT')">
+                                    RX 6600 XT
+                                </li>
+                                <li class="dropdown-item" data-value="RTX 3060 12GB"
+                                    onclick="selectCPU('cpu2', 'RTX 3060 12GB')">
+                                    RTX 3060 12GB
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_container">
+
+                <div class="detail_container">
+                    <div class="top_selection">
+                        <button class="selected_option" id="general-button">General
+                        </button>
+                        <button class="nonselected_option" id="performance-button">Performance
+                        </button>
+                        <button class="nonselected_option" id="gaming-button">Gaming
+                        </button>
+                        <button class="nonselected_option" id="power-button">Power
+                        </button>
+
+                    </div>
+                    <div class="cpu_detail_container hidden" id="general">
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-base_clock"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Base Clock</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-base_clock"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-boost_clock"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Boost Clock</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-boost_clock"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-memory"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Memory</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-memory"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-memory_clock"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Memory Clock</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-memory_clock"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-TFLOPs"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">TFLOPs</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-TFLOPs"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-rt_cores"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">RT Core</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-rt_cores"></div>
+                        </div>
+                    </div>
+                    <div class="cpu_detail_container hidden" id="performance">
+                        <div class="cpu_detail_title_2"><img class="img_3d_mark"
+                                src="https://logonoid.com/images/3dmark-logo.png">
+                            </img></div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-timespy"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Time Spy</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-timespy"></div>
+                        </div>
+                        <div class="cpu_detail_title">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/512px-Blender_logo_no_text.svg.png?20210507122249">
+                            </img>Blender 3.6
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-blender"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Scores</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-blender"></div>
+                        </div>
+                    </div>
+                    <div class="cpu_detail_container hidden" id="gaming">
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-apex"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://1000logos.net/wp-content/uploads/2021/06/Apex-Legends-Logo-2019.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-apex"></div>
+                        </div>
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-valhalla"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Assassin%27s_Creed_Valhalla_text_logo.svg/2560px-Assassin%27s_Creed_Valhalla_text_logo.svg.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-valhalla"></div>
+                        </div>
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-cyberpunk"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-cyberpunk"></div>
+                        </div>
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-forza"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Forza_new_logo.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-forza"></div>
+                        </div>
+                        
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-rdr"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Red_Dead_Redemption_2_Logo.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-rdr"></div>
+                        </div>
+                        <div class="cpu_detail_g">
+                            <div class="cpu-title" id="cpu1-village"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title_g"><img src="https://www.residentevil.com/village/assets/images/common/logo.png">
+                            </img></div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-village"></div>
+                        </div>
+                    </div>
+                
+                    <div class="cpu_detail_container hidden" id="power">
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-tdp"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">TGP</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-tdp"></div>
+                        </div>
+                        <div class="cpu_detail">
+                            <div class="cpu-title" id="cpu1-minpsu"></div>
+                            <i class="fa-solid fa-chevron-left" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title">Min PSU</div>
+                            <i class="fa-solid fa-chevron-right" style="color: #1d1d1f;"></i>
+                            <div class="cpu-title" id="cpu2-minpsu"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="gpu_comparison_2.js"></script>
+</body>
+
+</html>
