@@ -302,7 +302,7 @@
             window.js_percent_diff = percent_diff
             lower_value_gpu = gpu1.compare_performance_value(gpu2)
             Element("name-dis").element.textContent = f"{lower_value_gpu} อาจจะคุ้มกว่า"
-            Element("name-disPercent").element.textContent = f"เปรียบเทียบจาก การใช้ไฟ, คะแนน benchmark, FPS ในเกมส์ ประมาณ {percent_diff}%"
+            Element("name-disPercent").element.textContent = f"เปรียบเทียบจากการใช้พลังงาน ในการประมวลผล 3D และ FPS ในเกมส์ ประมาณ {percent_diff}%"
             updateProgress()
     </py-script>
     <script src="app.js"></script>
