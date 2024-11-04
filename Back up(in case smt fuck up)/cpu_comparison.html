@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CPU Comparison</title>
+    <link rel="icon" type="image/x-icon" href="" />
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="abtusstyle.css">
+    <link rel="stylesheet" type="text/css" href="cpu_comparison.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+    <Header>
+        <nav class="navbar">
+            <div class="logo">
+                <script src="kemo.js"></script>
+                <div id="lottie"></div>
+                <script src="kemolottie.js"></script>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cpu_comparison.html" class="active">Compare</a></li>
+                <li><a href="value_for_money.html">VoF</a></li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
+            </ul>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </nav>
+        <div class="phonenav" id="phonenav">
+            <ul>
+                <div class="phonenavli" id="phonenavli">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cpu_comparison.html" class="active">Compare</a></li>
+                    <li><a href="value_for_money.html">VoF</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="https://discord.com/invite/VzPybmujS8">Support</a></li>
+                </div>
+            </ul>
+        </div>
+    </Header>
+    <div class="cpu_comparison">
+        <div class="main_content">
+            <div class="title_container">
+                <div class="head_title">KEMO Benchmark</div>
+                <div class="sub_title">Compare as your desire.</div>
+            </div>
+            <div class="sub_container">
+                <div class="left_container">
+                    <div class="list_container">
+                        <div class="list_header">Best For Gaming</div>
+                        <hr class="list_line">
+                        </hr>
+                        <div class="list_row">
+                            <a href="https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html"
+                                class="list_content">
+                                <img
+                                    src="images/ryzen7 7800x3d.jpg">
+                                </img>RYZEN 7 7800X3D
+                            </a>
+                        </div>
+                        <div class="list_row">
+                            <a href="https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600x.html" class="list_content">
+                                <img src="images/ryzen5 7600x.jpg">
+                                </img class="list_img">RYZEN 5 7600X
+                            </a>
+                        </div>
+                        <div class="list_header">Best For Budget PC</div>
+                        <hr class="list_line">
+                        <div class="list_row">
+                            <a href="https://www.intel.com/content/www/us/en/products/sku/230501/intel-core-i513400f-processor-20m-cache-up-to-4-60-ghz/specifications.html?wapkw=13400f" class="list_content">
+                                <img src="images/i5 13400f.jpg">
+                                </img>CORE i5 13400F
+                            </a>
+                        </div>
+                        <div class="list_row">
+                            <a href="https://www.intel.com/content/www/us/en/products/sku/230576/intel-core-i313100f-processor-12m-cache-up-to-4-50-ghz/specifications.html" class="list_content">
+                                <img
+                                    src="images/i3 13100f.jpg">
+                                </img>CORE i3 13100F
+                            </a>
+                        </div>
+                    </div>
+                    <div class="music-player-container">
+                        <div class="music-cover">
+                            <img src="https://i.scdn.co/image/ab67616d0000b27346814e1b44e54d806753801e"
+                                id="cover-image">
+                        </div>
+                        <div class="music-player-detail">
+                            <div class="music-details">
+                                <div class="music-name" id="music-name">Guardians of the Galaxy
+                                </div>
+                            </div>
+                            <div class="music-duration">
+                                <span id="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progress-bar"></div>
+                                </div>
+                                <span id="total-duration">1:23</span>
+                            </div>
+                            <div class="music-controls">
+                                <!-- <button id="before-btn" class="fa-solid fa-backward-step"></button> -->
+                                <button id="play-pause-btn" class="fa-regular"></button>
+                                <!-- <button id="next-btn" class="fa-solid fa-forward-step"></button> -->
+                                Come and Get Your Love
+                            </div>
+                        </div>
+                        <audio id="audio-player" src="music/Come and Get Your Love.mp3"></audio>
+                    </div>
+                </div>
+                <div class="select_container">
+                    <div class="select_option_container">
+                        <button class="selected_option" >CPU
+                        </button>
+                        <button class="nonselected_option" onclick="SwitchPage()">GPU
+                        </button>
+                    </div>
+
+                    <div class="product_container">
+
+                        <div class="product" id="cpu1-product">
+                            <button class="dropdown-button" id="cpu1-dropdown-button" onclick="toggleDropdown('cpu1')">
+                                SELECT CPU
+                            </button>
+                            <input type="text" class="search-box" id="cpu1-search-box" style="display: none"
+                                placeholder="SEARCH ..." oninput="filterCpuOptions(event, 'cpu1')" autocomplete="off" />
+                            <ul class="dropdown-content" id="cpu1-dropdown-content">
+                                <li class="dropdown-item" data-value="Ryzen 7 7700X"
+                                    onclick="selectCPU('cpu1', 'Ryzen 7 7700X')">
+                                    Ryzen 7 7700X
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 13500"
+                                    onclick="selectCPU('cpu1', 'Core i5 13500')">
+                                    Core i5 13500
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 13400F"
+                                    onclick="selectCPU('cpu1', 'Core i5 13400F')">
+                                    Core i5 13400F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i3 13100F"
+                                    onclick="selectCPU('cpu1', 'Core i3 13100F')">
+                                    Core i3 13100F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 12400"
+                                    onclick="selectCPU('cpu1', 'Core i5 12400')">
+                                    Core i5 12400
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 12400F"
+                                    onclick="selectCPU('cpu1', 'Core i5 12400F')">
+                                    Core i5 12400F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i3 12100"
+                                    onclick="selectCPU('cpu1', 'Core i3 12100')">
+                                    Core i3 12100
+                                </li>
+                                <li class="dropdown-item" data-value="Core i3 12100F"
+                                    onclick="selectCPU('cpu1', 'Core i3 12100F')">
+                                    Core i3 12100F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 11400F"
+                                    onclick="selectCPU('cpu1', 'Core i5 11400F')">
+                                    Core i5 11400F
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600X"
+                                    onclick="selectCPU('cpu1', 'Ryzen 5 5600X')">
+                                    Ryzen 5 5600X
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600"
+                                    onclick="selectCPU('cpu1', 'Ryzen 5 5600')">
+                                    Ryzen 5 5600
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600G"
+                                    onclick="selectCPU('cpu1', 'Ryzen 5 5600G')">
+                                    Ryzen 5 5600G
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 3600"
+                                    onclick="selectCPU('cpu1', 'Ryzen 5 3600')">
+                                    Ryzen 5 3600
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="product" id="cpu2-product">
+                            <button class="dropdown-button" id="cpu2-dropdown-button" onclick="toggleDropdown('cpu2')">
+                                SELECT CPU
+                            </button>
+                            <input type="text" class="search-box" id="cpu2-search-box" style="display: none"
+                                placeholder="SEARCH ..." oninput="filterCpuOptions(event, 'cpu2')" autocomplete="off" />
+                            <ul class="dropdown-content" id="cpu2-dropdown-content">
+                                <li class="dropdown-item" data-value="Ryzen 7 7700X"
+                                    onclick="selectCPU('cpu2', 'Ryzen 7 7700X')">
+                                    Ryzen 7 7700X
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 13500"
+                                    onclick="selectCPU('cpu2', 'Core i5 13500')">
+                                    Core i5 13500
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 13400F"
+                                    onclick="selectCPU('cpu2', 'Core i5 13400F')">
+                                    Core i5 13400F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 12400"
+                                    onclick="selectCPU('cpu2', 'Core i5 12400')">
+                                    Core i5 12400
+                                </li>
+                                <li class="dropdown-item" data-value="Core i5 12400F"
+                                    onclick="selectCPU('cpu2', 'Core i5 12400F')">
+                                    Core i5 12400F
+                                </li>
+                                <li class="dropdown-item" data-value="Core i3 12100"
+                                    onclick="selectCPU('cpu2', 'Core i3 12100')">
+                                    Core i3 12100
+                                </li>
+                                <li class="dropdown-item" data-value="Core i3 12100F"
+                                    onclick="selectCPU('cpu2', 'Core i3 12100F')">
+                                    Core i3 12100F
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600X"
+                                    onclick="selectCPU('cpu2', 'Ryzen 5 5600X')">
+                                    Ryzen 5 5600X
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600"
+                                    onclick="selectCPU('cpu2', 'Ryzen 5 5600')">
+                                    Ryzen 5 5600
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 5600G"
+                                    onclick="selectCPU('cpu2', 'Ryzen 5 5600G')">
+                                    Ryzen 5 5600G
+                                </li>
+                                <li class="dropdown-item" data-value="Ryzen 5 3600"
+                                    onclick="selectCPU('cpu2', 'Ryzen 5 3600')">
+                                    Ryzen 5 3600
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail_image">
+                            <img id="product1-image"
+                                src="https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif" />
+                        </div>
+                        <div class="detail_image">
+                            <img id="product2-image"
+                                src="https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif" />
+                        </div>
+                    </div>
+                    <div class="compare_btn">
+                        <button id="compare-button" onclick="navigateToComparisonPage()">COMPARE NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="height: 2rem;"></footer>
+    <script src="cpu_comparison.js"></script>
+</body>
+
+</html>
