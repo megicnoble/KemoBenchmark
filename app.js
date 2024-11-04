@@ -1,4 +1,4 @@
-// ขอบคุณ ChatGPT มากที่ทำให้ผมไม่ต้องเขียนแบบเน้นถึก <3
+
 function setupContainer(container, dropdownId) {
     const colors = container.querySelectorAll('.color');
     const GPUthingy = container.querySelectorAll('.GPUsmt');
@@ -164,7 +164,24 @@ function updateProgress() {
         alert("yeah this line is worthless, why bother reading this");
     }
 }
-
-
 setupContainer(document.querySelector('.left-container'), 'colorDropdownLeft');
 setupContainer(document.querySelector('.right-container'), 'colorDropdownRight');
+
+const menuIcon = document.getElementById('menu-icon');
+const phonenav = document.querySelector('.phonenav');
+
+menuIcon.addEventListener('click', () => {
+  phonenav.style.right = phonenav.style.right === '0px' ? '-20em' : '0px';
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const animation = document.getElementById('animation');
+
+  if (animation) {
+    animation.setSubframe(false);
+    animation.setQuality('high');
+    animation.setSize(300, 150);
+  } else {
+    console.warn('Animation element not found');
+  }
+});
