@@ -1,20 +1,21 @@
-let text = document.getElementById("text");
-let anilogo = document.getElementById("anilogo");
+let text = document.getElementById('text');
+let anilogo = document.getElementById('anilogo');
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   let value = window.scrollY;
 
-  text.style.left = value * -1.5 + "px";
-  anilogo.style.left = value * 1.5 + "px";
-  btn.style.marginLeft = value * -1.5 + "px";
-  p.style.left = value * -1.5 + "px";
+  text.style.left = value * -1.5 + 'px';
+  anilogo.style.left = value * 1.5 + 'px';
+  btn.style.marginLeft = value * -1.5 + 'px';
+  p.style.left = value * -1.5 + 'px';
+
 });
 
-const menuIcon = document.getElementById("menu-icon");
-const phonenav = document.querySelector(".phonenav");
+const menuIcon = document.getElementById('menu-icon');
+const phonenav = document.querySelector('.phonenav');
 
-menuIcon.addEventListener("click", () => {
-  phonenav.style.right = phonenav.style.right === "0px" ? "-20em" : "0px";
+menuIcon.addEventListener('click', () => {
+  phonenav.style.right = phonenav.style.right === '0px' ? '-20em' : '0px';
 });
 
 function navigateToComparisonPage() {
@@ -26,9 +27,8 @@ function SwitchPage() {
 }
 
 function toggleDropdown(cpuId) {
-  const dropdownContent = document.getElementById(cpuId + "-dropdown-content");
-  dropdownContent.style.display =
-    dropdownContent.style.display === "none" ? "block" : "none";
+  const dropdownContent = document.getElementById(cpuId + '-dropdown-content');
+  dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
 
   if (dropdownContent.style.display === "none") {
     dropdownContent.style.display = "block";
@@ -72,54 +72,40 @@ document.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("cpu1-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
+document.getElementById("cpu1-search-box").addEventListener("click", function (event) {
 
-document
-  .getElementById("cpu2-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
+  event.stopPropagation();
+});
+
+document.getElementById("cpu2-search-box").addEventListener("click", function (event) {
+
+  event.stopPropagation();
+});
 
 function selectCPU(cpuId, cpu) {
-  const dropdownButton = document.getElementById(cpuId + "-dropdown-button");
+  const dropdownButton = document.getElementById(cpuId + '-dropdown-button');
   dropdownButton.textContent = cpu;
   toggleDropdown(cpuId);
 
-  const selectedValue = document
-    .querySelector(
-      `#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`
-    )
-    .getAttribute("data-value");
-  console.log("Selected value:", selectedValue);
+  const selectedValue = document.querySelector(`#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`).getAttribute('data-value');
+  console.log('Selected value:', selectedValue);
   localStorage.setItem(cpuId, selectedValue);
   compareProducts();
 }
 
 function filterCpuOptions(event, cpuId) {
   const input = event.target.value.toLowerCase();
-  const dropdownItems = document.querySelectorAll(
-    `#${cpuId}-dropdown-content .dropdown-item`
-  );
+  const dropdownItems = document.querySelectorAll(`#${cpuId}-dropdown-content .dropdown-item`);
 
   dropdownItems.forEach((item) => {
     const itemText = item.textContent.trim().toLowerCase();
     const itemElement = item;
     const inputIsNumeric = isNaN(parseFloat(input)) && isFinite(input);
     const itemTextIsNumeric = isNaN(parseFloat(itemText)) && isFinite(itemText);
-    if (
-      input.length < 2 ||
-      (inputIsNumeric && itemTextIsNumeric && itemText.includes(input))
-    ) {
+    if (input.length < 2 || inputIsNumeric && itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
-    } else if (
-      !inputIsNumeric &&
-      !itemTextIsNumeric &&
-      itemText.includes(input)
-    ) {
+    }
+    else if (!inputIsNumeric && !itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
     } else {
       itemElement.style.display = "none";
@@ -128,11 +114,11 @@ function filterCpuOptions(event, cpuId) {
 }
 
 function getCpuDetails(cpuId) {
-  const cpuSelect = document.getElementById(cpuId + "-dropdown-button");
+  const cpuSelect = document.getElementById(cpuId + '-dropdown-button');
   const cpuValue = cpuSelect.textContent;
-  const cpuDetails = cpuData[cpuValue] || {
-    image:
-      "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
+  const cpuDetails = cpuData[cpuValue] ||
+  {
+    image: "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
   };
 
   return {
@@ -146,38 +132,43 @@ function compareProducts() {
 
   document.getElementById("product1-image").src = cpu1Details.image;
   document.getElementById("product2-image").src = cpu2Details.image;
+
 }
 const cpuData = {
+  
   "RX 6600 XT": {
     image: "https://static.hardwaredb.net/badges/radeon-rx-6600-xt.png",
   },
   "RTX 3060 12GB": {
     image: "https://static.hardwaredb.net/badges/geforce-rtx-3060.png",
   },
+
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const audioPlayer = document.getElementById("audio-player");
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const audioPlayer = document.getElementById('audio-player');
   audioPlayer.volume = 0.3;
 });
 
-const audioPlayer = document.getElementById("audio-player");
-const playPauseBtn = document.getElementById("play-pause-btn");
-const currentTimeSpan = document.getElementById("current-time");
-const totalDurationSpan = document.getElementById("total-duration");
-const progressBar = document.getElementById("progress-bar");
-const coverImage = document.getElementById("cover-image");
-const MusicArtists = document.getElementById("music-artist");
-const MusicName = document.getElementById("music-name");
+const audioPlayer = document.getElementById('audio-player');
+const playPauseBtn = document.getElementById('play-pause-btn');
+const currentTimeSpan = document.getElementById('current-time');
+const totalDurationSpan = document.getElementById('total-duration');
+const progressBar = document.getElementById('progress-bar');
+const coverImage = document.getElementById('cover-image');
+const MusicArtists = document.getElementById('music-artist');
+const MusicName = document.getElementById('music-name');
 
 let isPlaying = false;
 let currentTrackIndex = 0;
-const Name = ["", ""];
-const tracks = ["", ""];
-const covers = ["", ""];
-const Artists = ["", ""];
+const Name = ["" , ""]
+const tracks = ["" , ""];
+const covers = ["" , ""];
+const Artists = ["" , ""];
 
-playPauseBtn.addEventListener("click", () => {
+playPauseBtn.addEventListener('click', () => {
   if (isPlaying) {
     audioPlayer.pause();
   } else {
@@ -187,7 +178,7 @@ playPauseBtn.addEventListener("click", () => {
   updatePlayPauseButton();
 });
 
-audioPlayer.addEventListener("timeupdate", () => {
+audioPlayer.addEventListener('timeupdate', () => {
   const currentTime = audioPlayer.currentTime;
   const totalDuration = audioPlayer.duration;
   const progressPercentage = (currentTime / totalDuration) * 100;
@@ -206,8 +197,8 @@ audioPlayer.addEventListener("timeupdate", () => {
   updatePlayPauseButton();
 });
 
-const nextBtn = document.getElementById("next-btn");
-nextBtn.addEventListener("click", () => {
+const nextBtn = document.getElementById('next-btn');
+nextBtn.addEventListener('click', () => {
   playNextTrack();
 });
 
@@ -223,8 +214,8 @@ function playNextTrack() {
   updatePlayPauseButton();
 }
 
-const beforeBtn = document.getElementById("before-btn");
-beforeBtn.addEventListener("click", () => {
+const beforeBtn = document.getElementById('before-btn');
+beforeBtn.addEventListener('click', () => {
   playPreviousTrack();
 });
 
@@ -243,13 +234,13 @@ function playPreviousTrack() {
 function formatTime(timeInSeconds) {
   const minutes = Math.floor(timeInSeconds / 60);
   const seconds = Math.floor(timeInSeconds % 60);
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 function updatePlayPauseButton() {
   if (isPlaying) {
-    playPauseBtn.classList.add("playing");
+    playPauseBtn.classList.add('playing');
   } else {
-    playPauseBtn.classList.remove("playing");
+    playPauseBtn.classList.remove('playing');
   }
 }

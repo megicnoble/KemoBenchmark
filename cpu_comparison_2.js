@@ -1,26 +1,27 @@
-let text = document.getElementById("text");
-let anilogo = document.getElementById("anilogo");
+let text = document.getElementById('text');
+let anilogo = document.getElementById('anilogo');
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   let value = window.scrollY;
 
-  text.style.left = value * -1.5 + "px";
-  anilogo.style.left = value * 1.5 + "px";
-  btn.style.marginLeft = value * -1.5 + "px";
-  p.style.left = value * -1.5 + "px";
+  text.style.left = value * -1.5 + 'px';
+  anilogo.style.left = value * 1.5 + 'px';
+  btn.style.marginLeft = value * -1.5 + 'px';
+  p.style.left = value * -1.5 + 'px';
+
 });
 
-const menuIcon = document.getElementById("menu-icon");
-const phonenav = document.querySelector(".phonenav");
+const menuIcon = document.getElementById('menu-icon');
+const phonenav = document.querySelector('.phonenav');
 
-menuIcon.addEventListener("click", () => {
-  phonenav.style.right = phonenav.style.right === "0px" ? "-20em" : "0px";
+menuIcon.addEventListener('click', () => {
+  phonenav.style.right = phonenav.style.right === '0px' ? '-20em' : '0px';
 });
+
 
 function toggleDropdown(cpuId) {
-  const dropdownContent = document.getElementById(cpuId + "-dropdown-content");
-  dropdownContent.style.display =
-    dropdownContent.style.display === "none" ? "block" : "none";
+  const dropdownContent = document.getElementById(cpuId + '-dropdown-content');
+  dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
 
   if (dropdownContent.style.display === "none") {
     dropdownContent.style.display = "block";
@@ -64,100 +65,87 @@ document.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("cpu1-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
 
-document
-  .getElementById("cpu2-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
+document.getElementById("cpu1-search-box").addEventListener("click", function (event) {
+
+  event.stopPropagation();
+});
+
+document.getElementById("cpu2-search-box").addEventListener("click", function (event) {
+
+  event.stopPropagation();
+});
 
 function selectCPU(cpuId, cpu) {
-  const dropdownButton = document.getElementById(cpuId + "-dropdown-button");
+  const dropdownButton = document.getElementById(cpuId + '-dropdown-button');
   dropdownButton.textContent = cpu;
   toggleDropdown(cpuId);
 
-  const selectedValue = document
-    .querySelector(
-      `#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`
-    )
-    .getAttribute("data-value");
-  console.log("Selected value:", selectedValue);
+  const selectedValue = document.querySelector(`#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`).getAttribute('data-value');
+  console.log('Selected value:', selectedValue);
   compareProducts();
 }
 
 function filterCpuOptions(event, cpuId) {
   const input = event.target.value.toLowerCase();
-  const dropdownItems = document.querySelectorAll(
-    `#${cpuId}-dropdown-content .dropdown-item`
-  );
+  const dropdownItems = document.querySelectorAll(`#${cpuId}-dropdown-content .dropdown-item`);
 
   dropdownItems.forEach((item) => {
     const itemText = item.textContent.trim().toLowerCase();
     const itemElement = item;
     const inputIsNumeric = isNaN(parseFloat(input)) && isFinite(input);
     const itemTextIsNumeric = isNaN(parseFloat(itemText)) && isFinite(itemText);
-    if (
-      input.length < 2 ||
-      (inputIsNumeric && itemTextIsNumeric && itemText.includes(input))
-    ) {
+    if (input.length < 2 || inputIsNumeric && itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
-    } else if (
-      !inputIsNumeric &&
-      !itemTextIsNumeric &&
-      itemText.includes(input)
-    ) {
+    }
+    else if (!inputIsNumeric && !itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
     } else {
       itemElement.style.display = "none";
     }
   });
 }
-const buttons = document.querySelectorAll(".top_selection button");
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    buttons.forEach((btn) => {
-      btn.classList.remove("selected_option");
-      btn.classList.add("nonselected_option");
+const buttons = document.querySelectorAll('.top_selection button');
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    buttons.forEach(btn => {
+      btn.classList.remove('selected_option');
+      btn.classList.add('nonselected_option');
     });
-    button.classList.remove("nonselected_option");
-    button.classList.add("selected_option");
+    button.classList.remove('nonselected_option');
+    button.classList.add('selected_option');
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".top_selection button");
-  const containers = document.querySelectorAll(".cpu_detail_container");
-  document.getElementById("general").classList.remove("hidden");
-  document.getElementById("general-button").classList.add("selected_option");
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.top_selection button');
+  const containers = document.querySelectorAll('.cpu_detail_container');
+  document.getElementById('general').classList.remove('hidden');
+  document.getElementById('general-button').classList.add('selected_option');
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const containerId = button.id.split("-")[0];
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const containerId = button.id.split('-')[0];
 
-      containers.forEach((container) => {
-        container.classList.add("hidden");
+      containers.forEach(container => {
+        container.classList.add('hidden');
       });
-      buttons.forEach((btn) => {
-        btn.classList.remove("selected_option");
+      buttons.forEach(btn => {
+        btn.classList.remove('selected_option');
       });
 
-      document.getElementById(containerId).classList.remove("hidden");
-      button.classList.add("selected_option");
+      document.getElementById(containerId).classList.remove('hidden');
+      button.classList.add('selected_option');
     });
   });
 
-  const selectedCpu1 = localStorage.getItem("cpu1");
+  const selectedCpu1 = localStorage.getItem('cpu1');
   if (selectedCpu1) {
     const cpuDetails1 = cpuData[selectedCpu1];
     if (cpuDetails1) {
-      const cpuButton1 = document.getElementById("cpu1-dropdown-button");
+      const cpuButton1 = document.getElementById('cpu1-dropdown-button');
       cpuButton1.textContent = selectedCpu1;
-      const cpu1Image = document.getElementById("product1-image");
+      const cpu1Image = document.getElementById('product1-image');
       cpu1Image.src = cpuDetails1.image;
       const cpu1cores = document.getElementById("cpu1-cores");
       cpu1cores.textContent = cpuDetails1.cores;
@@ -195,13 +183,13 @@ document.addEventListener("DOMContentLoaded", function () {
       cpu1full_load.textContent = cpuDetails1.full_load;
     }
   }
-  const selectedCpu2 = localStorage.getItem("cpu2");
+  const selectedCpu2 = localStorage.getItem('cpu2');
   if (selectedCpu2) {
     const cpuDetails2 = cpuData[selectedCpu2];
     if (cpuDetails2) {
-      const cpuButton2 = document.getElementById("cpu2-dropdown-button");
+      const cpuButton2 = document.getElementById('cpu2-dropdown-button');
       cpuButton2.textContent = selectedCpu2;
-      const cpu2Image = document.getElementById("product2-image");
+      const cpu2Image = document.getElementById('product2-image');
       cpu2Image.src = cpuDetails2.image;
       const cpu2cores = document.getElementById("cpu2-cores");
       cpu2cores.textContent = cpuDetails2.cores;
@@ -239,14 +227,14 @@ document.addEventListener("DOMContentLoaded", function () {
       cpu2full_load.textContent = cpuDetails2.full_load;
     }
   }
+
 });
 
 function getCpuDetails(cpuId) {
-  const cpuSelect = document.getElementById(cpuId + "-dropdown-button");
+  const cpuSelect = document.getElementById(cpuId + '-dropdown-button');
   const cpuValue = cpuSelect.textContent;
   const cpuDetails = cpuData[cpuValue] || {
-    image:
-      "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
+    image: "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
     cores: "",
     threads: "",
     base_clock: "",
@@ -264,6 +252,7 @@ function getCpuDetails(cpuId) {
     tdp: "",
     idle_load: "",
     full_load: "",
+
   };
 
   return {
@@ -301,15 +290,11 @@ function compareProducts() {
   document.getElementById("cpu1-threads").textContent = cpu1Details.threads;
   document.getElementById("cpu2-threads").textContent = cpu2Details.threads;
 
-  document.getElementById("cpu1-base_clock").textContent =
-    cpu1Details.base_clock;
-  document.getElementById("cpu2-base_clock").textContent =
-    cpu2Details.base_clock;
+  document.getElementById("cpu1-base_clock").textContent = cpu1Details.base_clock;
+  document.getElementById("cpu2-base_clock").textContent = cpu2Details.base_clock;
 
-  document.getElementById("cpu1-boost_clock").textContent =
-    cpu1Details.boost_clock;
-  document.getElementById("cpu2-boost_clock").textContent =
-    cpu2Details.boost_clock;
+  document.getElementById("cpu1-boost_clock").textContent = cpu1Details.boost_clock;
+  document.getElementById("cpu2-boost_clock").textContent = cpu2Details.boost_clock;
 
   document.getElementById("cpu1-L2_Cache").textContent = cpu1Details.L2_Cache;
   document.getElementById("cpu2-L2_Cache").textContent = cpu2Details.L2_Cache;
@@ -317,15 +302,11 @@ function compareProducts() {
   document.getElementById("cpu1-L3_Cache").textContent = cpu1Details.L3_Cache;
   document.getElementById("cpu2-L3_Cache").textContent = cpu2Details.L3_Cache;
 
-  document.getElementById("cpu1-Memory_Type").textContent =
-    cpu1Details.Memory_Type;
-  document.getElementById("cpu2-Memory_Type").textContent =
-    cpu2Details.Memory_Type;
+  document.getElementById("cpu1-Memory_Type").textContent = cpu1Details.Memory_Type;
+  document.getElementById("cpu2-Memory_Type").textContent = cpu2Details.Memory_Type;
 
-  document.getElementById("cpu1-Memory_Speed").textContent =
-    cpu1Details.Memory_Speed;
-  document.getElementById("cpu2-Memory_Speed").textContent =
-    cpu2Details.Memory_Speed;
+  document.getElementById("cpu1-Memory_Speed").textContent = cpu1Details.Memory_Speed;
+  document.getElementById("cpu2-Memory_Speed").textContent = cpu2Details.Memory_Speed;
 
   document.getElementById("cpu1-pcie").textContent = cpu1Details.pcie;
   document.getElementById("cpu2-pcie").textContent = cpu2Details.pcie;
@@ -336,20 +317,14 @@ function compareProducts() {
   document.getElementById("cpu1-igpu").textContent = cpu1Details.igpu;
   document.getElementById("cpu2-igpu").textContent = cpu2Details.igpu;
 
-  document.getElementById("cpu1-single_score").textContent =
-    cpu1Details.single_score;
-  document.getElementById("cpu2-single_score").textContent =
-    cpu2Details.single_score;
+  document.getElementById("cpu1-single_score").textContent = cpu1Details.single_score;
+  document.getElementById("cpu2-single_score").textContent = cpu2Details.single_score;
 
-  document.getElementById("cpu1-multi_score").textContent =
-    cpu1Details.multi_score;
-  document.getElementById("cpu2-multi_score").textContent =
-    cpu2Details.multi_score;
+  document.getElementById("cpu1-multi_score").textContent = cpu1Details.multi_score;
+  document.getElementById("cpu2-multi_score").textContent = cpu2Details.multi_score;
 
-  document.getElementById("cpu1-blender_score").textContent =
-    cpu1Details.blender_score;
-  document.getElementById("cpu2-blender_score").textContent =
-    cpu2Details.blender_score;
+  document.getElementById("cpu1-blender_score").textContent = cpu1Details.blender_score;
+  document.getElementById("cpu2-blender_score").textContent = cpu2Details.blender_score;
 
   document.getElementById("cpu1-tdp").textContent = cpu1Details.tdp;
   document.getElementById("cpu2-tdp").textContent = cpu2Details.tdp;
@@ -359,9 +334,12 @@ function compareProducts() {
 
   document.getElementById("cpu1-full_load").textContent = cpu1Details.full_load;
   document.getElementById("cpu2-full_load").textContent = cpu2Details.full_load;
+
+
 }
 
 function applyComparisonStyling() {
+
   const cpu1ScoreElement = document.getElementById("cpu1-multi_score");
   const cpu2ScoreElement = document.getElementById("cpu2-multi_score");
   const cpu1Score = parseInt(cpu1ScoreElement.textContent);
@@ -444,8 +422,7 @@ applyComparisonStyling();
 
 const cpuData = {
   "Ryzen 7 7700X": {
-    image:
-      "https://www.techpowerup.com/review/amd-ryzen-7-3700x/images/small.png",
+    image: "https://www.techpowerup.com/review/amd-ryzen-7-3700x/images/small.png",
     cores: "8",
     threads: "16",
     base_clock: "4.50 GHz",
@@ -465,8 +442,7 @@ const cpuData = {
     full_load: "130 W",
   },
   "Core i5 13500": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
     cores: "14 ( 6P+8E )",
     threads: "20",
     base_clock: "2.50 GHz",
@@ -486,8 +462,7 @@ const cpuData = {
     full_load: "N/A",
   },
   "Core i5 13400F": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
     cores: "10 ( 6P+4E )",
     threads: "16",
     base_clock: "2.50 GHz",
@@ -507,8 +482,7 @@ const cpuData = {
     full_load: "N/A",
   },
   "Core i3 13100F": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
     cores: "4 ( 4P+0E )",
     threads: "8",
     base_clock: "3.40 GHz",
@@ -528,8 +502,7 @@ const cpuData = {
     full_load: "146 W",
   },
   "Core i5 12400": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
     cores: "6",
     threads: "12",
     base_clock: "2.50 GHz",
@@ -549,8 +522,7 @@ const cpuData = {
     full_load: "138 W",
   },
   "Core i5 12400F": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
     cores: "6",
     threads: "12",
     base_clock: "2.50 GHz",
@@ -570,8 +542,7 @@ const cpuData = {
     full_load: "138 W",
   },
   "Core i3 12100": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
     cores: "4",
     threads: "8",
     base_clock: "3.30 GHz",
@@ -591,8 +562,7 @@ const cpuData = {
     full_load: "114 W",
   },
   "Core i3 12100F": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/90/Intel_Core_i3_Logo_2020.png?20210405013512",
     cores: "4",
     threads: "8",
     base_clock: "3.30 GHz",
@@ -610,10 +580,9 @@ const cpuData = {
     tdp: "58 W",
     idle_load: "46 W",
     full_load: "114 W",
-  },
+  }, 
   "Core i5 11400F": {
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Intel_Core_i5_%2811th_generation%2C_logo%29.svg/512px-Intel_Core_i5_%2811th_generation%2C_logo%29.svg.png?20211018065945",
     cores: "6",
     threads: "12",
     base_clock: "2.60 GHz",
@@ -633,8 +602,7 @@ const cpuData = {
     full_load: "130 W",
   },
   "Ryzen 5 5600X": {
-    image:
-      "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
+    image: "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
     cores: "6",
     threads: "12",
     base_clock: "3.70 GHz",
@@ -654,8 +622,7 @@ const cpuData = {
     full_load: "126 W",
   },
   "Ryzen 5 5600": {
-    image:
-      "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
+    image: "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
     cores: "6",
     threads: "12",
     base_clock: "3.50 GHz",
@@ -675,8 +642,7 @@ const cpuData = {
     full_load: "126 W",
   },
   "Ryzen 5 5600G": {
-    image:
-      "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
+    image: "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
     cores: "6",
     threads: "12",
     base_clock: "3.90 GHz",
@@ -696,8 +662,7 @@ const cpuData = {
     full_load: "132 W",
   },
   "Ryzen 5 3600": {
-    image:
-      "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
+    image: "https://www.techpowerup.com/review/amd-ryzen-5-3600/images/small.png",
     cores: "6",
     threads: "12",
     base_clock: "3.60 GHz",
@@ -716,4 +681,6 @@ const cpuData = {
     idle_load: "51 W",
     full_load: "135 W",
   },
+
 };
+

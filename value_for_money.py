@@ -36,18 +36,31 @@ class GPU:
         self.__power = self.tgp[name]
 
     # Less is more
+    def money_spent_for_performance(self):
+        return self.price / self.__score
     def money_spent_for_fps(self):
         return self.price / self.__fps
+    def watt_per_performance(self):
+        return self.__power / self.__score
+    def watt_per_fps(self):
+        return self.__power / self.__fps
     
     # Greater is better
     def performance_per_money(self):
         return self.__score / self.price
+    def fps_per_money(self):
+        return self.__fps / self.price
     def performance_per_watt(self):
         return self.__score / self.__power
+    def fps_per_watt(self):
+        return self.__fps / self.__power
 
+    # not complete yet but can use it
     # more result is more value
     def more_performance_value(self):
-        return self.performance_per_watt() / self.money_spent_for_fps()
+        return self.money_spent_for_performance() / self.watt_per_performance()
+    def more_fps_value(self):
+        return self.money_spent_for_fps() / self.watt_per_fps()
 
 def main():
     "get input, process and output"
@@ -60,13 +73,13 @@ def main():
 
     gpu1 = GPU(gpu1_name, price1)
     gpu2 = GPU(gpu2_name, price2)
-    result1 = gpu1.performance_per_money()
-    result2 = gpu2.performance_per_money()
+    result1 = gpu1.more_performance_value()
+    result2 = gpu2.more_performance_value()
 
     more_value = max(result1, result2)
     less_value = min(result1, result2)
 
-    percent_diff = (1 - (less_value / more_value)) * 100
+    percent_diff = ((more_value / less_value) * 100) - 100
 
     # For testing
     print("result1",result1)

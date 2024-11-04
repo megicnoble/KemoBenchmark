@@ -1,26 +1,27 @@
-let text = document.getElementById("text");
-let anilogo = document.getElementById("anilogo");
+let text = document.getElementById('text');
+let anilogo = document.getElementById('anilogo');
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   let value = window.scrollY;
 
-  text.style.left = value * -1.5 + "px";
-  anilogo.style.left = value * 1.5 + "px";
-  btn.style.marginLeft = value * -1.5 + "px";
-  p.style.left = value * -1.5 + "px";
+  text.style.left = value * -1.5 + 'px';
+  anilogo.style.left = value * 1.5 + 'px';
+  btn.style.marginLeft = value * -1.5 + 'px';
+  p.style.left = value * -1.5 + 'px';
+
 });
 
-const menuIcon = document.getElementById("menu-icon");
-const phonenav = document.querySelector(".phonenav");
+const menuIcon = document.getElementById('menu-icon');
+const phonenav = document.querySelector('.phonenav');
 
-menuIcon.addEventListener("click", () => {
-  phonenav.style.right = phonenav.style.right === "0px" ? "-20em" : "0px";
+menuIcon.addEventListener('click', () => {
+  phonenav.style.right = phonenav.style.right === '0px' ? '-20em' : '0px';
 });
+
 
 function toggleDropdown(cpuId) {
-  const dropdownContent = document.getElementById(cpuId + "-dropdown-content");
-  dropdownContent.style.display =
-    dropdownContent.style.display === "none" ? "block" : "none";
+  const dropdownContent = document.getElementById(cpuId + '-dropdown-content');
+  dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
 
   if (dropdownContent.style.display === "none") {
     dropdownContent.style.display = "block";
@@ -64,100 +65,87 @@ document.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("cpu1-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
 
-document
-  .getElementById("cpu2-search-box")
-  .addEventListener("click", function (event) {
-    event.stopPropagation();
-  });
+document.getElementById("cpu1-search-box").addEventListener("click", function (event) {
+
+  event.stopPropagation();
+});
+
+document.getElementById("cpu2-search-box").addEventListener("click", function (event) {
+
+  event.stopPropagation();
+});
 
 function selectCPU(cpuId, cpu) {
-  const dropdownButton = document.getElementById(cpuId + "-dropdown-button");
+  const dropdownButton = document.getElementById(cpuId + '-dropdown-button');
   dropdownButton.textContent = cpu;
   toggleDropdown(cpuId);
 
-  const selectedValue = document
-    .querySelector(
-      `#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`
-    )
-    .getAttribute("data-value");
-  console.log("Selected value:", selectedValue);
+  const selectedValue = document.querySelector(`#${cpuId}-dropdown-content .dropdown-item[data-value="${cpu}"]`).getAttribute('data-value');
+  console.log('Selected value:', selectedValue);
   compareProducts();
 }
 
 function filterCpuOptions(event, cpuId) {
   const input = event.target.value.toLowerCase();
-  const dropdownItems = document.querySelectorAll(
-    `#${cpuId}-dropdown-content .dropdown-item`
-  );
+  const dropdownItems = document.querySelectorAll(`#${cpuId}-dropdown-content .dropdown-item`);
 
   dropdownItems.forEach((item) => {
     const itemText = item.textContent.trim().toLowerCase();
     const itemElement = item;
     const inputIsNumeric = isNaN(parseFloat(input)) && isFinite(input);
     const itemTextIsNumeric = isNaN(parseFloat(itemText)) && isFinite(itemText);
-    if (
-      input.length < 2 ||
-      (inputIsNumeric && itemTextIsNumeric && itemText.includes(input))
-    ) {
+    if (input.length < 2 || inputIsNumeric && itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
-    } else if (
-      !inputIsNumeric &&
-      !itemTextIsNumeric &&
-      itemText.includes(input)
-    ) {
+    }
+    else if (!inputIsNumeric && !itemTextIsNumeric && itemText.includes(input)) {
       itemElement.style.display = "block";
     } else {
       itemElement.style.display = "none";
     }
   });
 }
-const buttons = document.querySelectorAll(".top_selection button");
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    buttons.forEach((btn) => {
-      btn.classList.remove("selected_option");
-      btn.classList.add("nonselected_option");
+const buttons = document.querySelectorAll('.top_selection button');
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    buttons.forEach(btn => {
+      btn.classList.remove('selected_option');
+      btn.classList.add('nonselected_option');
     });
-    button.classList.remove("nonselected_option");
-    button.classList.add("selected_option");
+    button.classList.remove('nonselected_option');
+    button.classList.add('selected_option');
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".top_selection button");
-  const containers = document.querySelectorAll(".cpu_detail_container");
-  document.getElementById("general").classList.remove("hidden");
-  document.getElementById("general-button").classList.add("selected_option");
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.top_selection button');
+  const containers = document.querySelectorAll('.cpu_detail_container');
+  document.getElementById('general').classList.remove('hidden');
+  document.getElementById('general-button').classList.add('selected_option');
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const containerId = button.id.split("-")[0];
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const containerId = button.id.split('-')[0];
 
-      containers.forEach((container) => {
-        container.classList.add("hidden");
+      containers.forEach(container => {
+        container.classList.add('hidden');
       });
-      buttons.forEach((btn) => {
-        btn.classList.remove("selected_option");
+      buttons.forEach(btn => {
+        btn.classList.remove('selected_option');
       });
 
-      document.getElementById(containerId).classList.remove("hidden");
-      button.classList.add("selected_option");
+      document.getElementById(containerId).classList.remove('hidden');
+      button.classList.add('selected_option');
     });
   });
 
-  const selectedCpu1 = localStorage.getItem("cpu1");
+  const selectedCpu1 = localStorage.getItem('cpu1');
   if (selectedCpu1) {
     const cpuDetails1 = cpuData[selectedCpu1];
     if (cpuDetails1) {
-      const cpuButton1 = document.getElementById("cpu1-dropdown-button");
+      const cpuButton1 = document.getElementById('cpu1-dropdown-button');
       cpuButton1.textContent = selectedCpu1;
-      const cpu1Image = document.getElementById("product1-image");
+      const cpu1Image = document.getElementById('product1-image');
       cpu1Image.src = cpuDetails1.image;
       const cpu1base_clock = document.getElementById("cpu1-base_clock");
       cpu1base_clock.textContent = cpuDetails1.base_clock;
@@ -194,13 +182,13 @@ document.addEventListener("DOMContentLoaded", function () {
       cpu1minpsu.textContent = cpuDetails1.minpsu;
     }
   }
-  const selectedCpu2 = localStorage.getItem("cpu2");
+  const selectedCpu2 = localStorage.getItem('cpu2');
   if (selectedCpu2) {
     const cpuDetails2 = cpuData[selectedCpu2];
     if (cpuDetails2) {
-      const cpuButton2 = document.getElementById("cpu2-dropdown-button");
+      const cpuButton2 = document.getElementById('cpu2-dropdown-button');
       cpuButton2.textContent = selectedCpu2;
-      const cpu2Image = document.getElementById("product2-image");
+      const cpu2Image = document.getElementById('product2-image');
       cpu2Image.src = cpuDetails2.image;
       const cpu2base_clock = document.getElementById("cpu2-base_clock");
       cpu2base_clock.textContent = cpuDetails2.base_clock;
@@ -218,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cpu2timespy.textContent = cpuDetails2.timespy;
       const cpu2blender = document.getElementById("cpu2-blender");
       cpu2blender.textContent = cpuDetails2.blender;
-
+      
       const cpu2apex = document.getElementById("cpu2-apex");
       cpu2apex.textContent = cpuDetails2.apex;
       const cpu2valhalla = document.getElementById("cpu2-valhalla");
@@ -237,14 +225,14 @@ document.addEventListener("DOMContentLoaded", function () {
       cpu2minpsu.textContent = cpuDetails2.minpsu;
     }
   }
+
 });
 
 function getCpuDetails(cpuId) {
-  const cpuSelect = document.getElementById(cpuId + "-dropdown-button");
+  const cpuSelect = document.getElementById(cpuId + '-dropdown-button');
   const cpuValue = cpuSelect.textContent;
   const cpuDetails = cpuData[cpuValue] || {
-    image:
-      "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
+    image: "https://i.gifer.com/origin/ba/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif",
     base_clock: "",
     boost_clock: "",
     memory: "",
@@ -261,6 +249,7 @@ function getCpuDetails(cpuId) {
     village: "",
     tdp: "",
     minpsu: "",
+
   };
 
   return {
@@ -281,6 +270,7 @@ function getCpuDetails(cpuId) {
     village: cpuDetails.village,
     tdp: cpuDetails.tdp,
     minpsu: cpuDetails.minpsu,
+
   };
 }
 
@@ -291,23 +281,17 @@ function compareProducts() {
   document.getElementById("product1-image").src = cpu1Details.image;
   document.getElementById("product2-image").src = cpu2Details.image;
 
-  document.getElementById("cpu1-base_clock").textContent =
-    cpu1Details.base_clock;
-  document.getElementById("cpu2-base_clock").textContent =
-    cpu2Details.base_clock;
+  document.getElementById("cpu1-base_clock").textContent = cpu1Details.base_clock;
+  document.getElementById("cpu2-base_clock").textContent = cpu2Details.base_clock;
 
-  document.getElementById("cpu1-boost_clock").textContent =
-    cpu1Details.boost_clock;
-  document.getElementById("cpu2-boost_clock").textContent =
-    cpu2Details.boost_clock;
+  document.getElementById("cpu1-boost_clock").textContent = cpu1Details.boost_clock;
+  document.getElementById("cpu2-boost_clock").textContent = cpu2Details.boost_clock;
 
   document.getElementById("cpu1-memory").textContent = cpu1Details.memory;
   document.getElementById("cpu2-memory").textContent = cpu2Details.memory;
 
-  document.getElementById("cpu1-memory_clock").textContent =
-    cpu1Details.memory_clock;
-  document.getElementById("cpu2-memory_clock").textContent =
-    cpu2Details.memory_clock;
+  document.getElementById("cpu1-memory_clock").textContent = cpu1Details.memory_clock;
+  document.getElementById("cpu2-memory_clock").textContent = cpu2Details.memory_clock;
 
   document.getElementById("cpu1-TFLOPs").textContent = cpu1Details.TFLOPs;
   document.getElementById("cpu2-TFLOPs").textContent = cpu2Details.TFLOPs;
@@ -344,6 +328,7 @@ function compareProducts() {
 
   document.getElementById("cpu1-minpsu").textContent = cpu1Details.minpsu;
   document.getElementById("cpu2-minpsu").textContent = cpu2Details.minpsu;
+
 }
 
 function applyComparisonStyling() {
@@ -459,7 +444,7 @@ function applyComparisonStyling() {
     cpu1villageElement.style.color = "";
     cpu2villageElement.style.color = "";
   }
-
+  
   setTimeout(applyComparisonStyling, 2000);
 }
 
@@ -504,4 +489,6 @@ const cpuData = {
     tdp: "160 W",
     minpsu: "500 W",
   },
+
 };
+
