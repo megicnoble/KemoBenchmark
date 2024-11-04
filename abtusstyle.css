@@ -11,11 +11,11 @@ body {
     overflow-x: hidden;
     margin: 0;
     width: 100%; 
-    padding-top: 5em;
+    padding-top: 0cqb;
     font-family: 'Kanit', sans-serif;
 }
 header {
-    position: fixed;
+    position: static;
     width: 100%;
     z-index: 9999;
     top: 0;
@@ -101,7 +101,7 @@ header {
   width: 20em;
   right: -20em;
   transition: right 0.3s ease;
-  
+  z-index: 100;
 }
 
 .phonenav ul  {

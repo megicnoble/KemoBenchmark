@@ -267,9 +267,6 @@ i {
         font-size: 12px;
     }
 
-    .cpu_comparison_2 {
-        padding-top: 1rem;
-    }
 }
 
 @media (max-width: 875px) {
@@ -278,11 +275,6 @@ i {
         font-size: 8px;
     }
 
-    .cpu_comparison_2 {
-        padding-top: 3.5rem;
-    }
-
-    
 }
 
 @media (max-width: 580px) {
@@ -290,7 +282,5 @@ i {
     * {
         font-size: 6px;
     }
-    .cpu_comparison_2 {
-        padding-top: 6.5rem;
-    }
+
 }

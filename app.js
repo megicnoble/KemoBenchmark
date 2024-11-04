@@ -116,11 +116,11 @@ function setupContainer(container, dropdownId) {
             fullName.textContent = "GeForce RTX 3070";
             proInfo.innerHTML = "• 8GB GDDR6X<br>• 1725 MHz Boost Clock<br>• 550 W Min PSU<br>";
         }
-        else if (color === "RTX 3060") {
+        else if (color === "RTX 3060 12GB") {
             header.textContent = "NVIDIA";
             proName.textContent = "RTX 3060";
             fullName.textContent = "GeForce RTX 3060";
-            proInfo.innerHTML = "• 8GB GDDR6X<br>• 1777 MHz Boost Clock<br>• 450 W Min PSU<br>";
+            proInfo.innerHTML = "• 12GB GDDR6X<br>• 1777 MHz Boost Clock<br>• 450 W Min PSU<br>";
         }
         else if (color === "GTX 1660 SUPER") {
             header.textContent = "NVIDIA";

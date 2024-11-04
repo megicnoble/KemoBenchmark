@@ -513,9 +513,6 @@ body {
     * {
         font-size: 8px;
     }
-    .cpu_comparison {
-        padding-top: 3rem;
-    }
 
 }
 
@@ -523,7 +520,5 @@ body {
     * {
         font-size: 6px;
     }
-    .cpu_comparison {
-        padding-top: 6rem;
-    }
+    
 }
